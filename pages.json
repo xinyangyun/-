@@ -1,0 +1,71 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				
+			}
+		},
+		{
+			"path": "pages/order/order"
+		},
+		{
+			"path": "pages/my/my"
+		},
+		{
+            "path" : "pages/login/login",
+            "style" : {
+				"app-plus":{
+					"bounce":"none",     
+					"scrollIndicator":"none",
+					"titleNView":false
+				}
+			}
+        }
+        ,{
+            "path" : "pages/fastrun/fastrun",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/book/book",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/express/express",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "FBP",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	//底部导航
+	"tabBar":{
+		"color":"#B1B1B1",
+		"selectedColor":"#FD6801",
+		"borderStyle":"black",
+		"backgroundColor":"#FFFFFF",
+		"list" : [
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/tabbar/index.png",
+				"selectedIconPath":"static/tabbar/indexSelected.png"
+			},
+			{
+				"pagePath":"pages/order/order",
+				"text":"订单",
+				"iconPath":"static/tabbar/dingdan.png",
+				"selectedIconPath":"static/tabbar/dingdanSelect.png"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"text":"我的",
+				"iconPath":"static/tabbar/my.png",
+				"selectedIconPath":"static/tabbar/mySelected.png"
+			}
+		]
+	}
+}
