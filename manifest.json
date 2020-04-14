@@ -9,7 +9,6 @@
     "app-plus" : {
         "usingComponents" : true,
         "nvueCompiler" : "uni-app",
-        "compilerVersion" : 3,
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
             "waiting" : true,
@@ -51,7 +50,8 @@
             "ios" : {},
             /* SDK配置 */
             "sdkConfigs" : {}
-        }
+        },
+        "compilerVersion" : 3
     },
     /* 快应用特有相关 */
     "quickapp" : {},
@@ -78,17 +78,18 @@
             "port" : ""
         }
     }
-	// "h5" : {
-	//     "devServer" : {
-	//         "port" : "8000",
-	// 		"disableHostCheck": true,
-	// 		"proxy": {
-	// 			"/serverUrl": {
-	// 				"target": "http://localhost:8080",
-	// 				"changeOrigin": true,
-	// 				"secure": false
-	// 			}
-	// 		}
-	//     }
-	// }
 }
+// "h5" : {
+//     "devServer" : {
+//         "port" : "8000",
+// 		"disableHostCheck": true,
+// 		"proxy": {
+// 			"/serverUrl": {
+// 				"target": "http://localhost:8080",
+// 				"changeOrigin": true,
+// 				"secure": false
+// 			}
+// 		}
+//     }
+// }
+

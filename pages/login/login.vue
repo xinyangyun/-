@@ -2,12 +2,12 @@
 	<view>
 		<uni-status-bar />
 		<view class="d-flex a-center j-sb  py-2 px-3 text-light-muted">
-			<view class="" @click="goBack">删除图标</view>
+			<view class="iconfont icon-error" @click="goBack"></view>
 			<view class="font-md" @click="forget">忘记密码</view>
 		</view>
 		
 		<view class="p-5">
-			<view class="font-big mb-5">密码登录</view>
+			<view class="font-big mb-5">欢迎登陆快跑</view>
 			<input type="text" class="border-bottom mb-4 uni-input px-0"
 			placeholder="请输入手机号/邮箱/账号" v-model="username"
 			placeholder-class="text-light-muted"
@@ -110,6 +110,13 @@
 				    },
 				    success: (res) => {
 						if (res.data.status == 200) {
+							localStorage.setItem("user",JSON.stringify({
+								 userId:res.data.obj.id,
+								 userPhone:res.data.obj.phone,
+								 userName:res.data.obj.username,
+								 userAddress:res.data.obj.address,
+							}))
+							console.log(res);
 							uni.showLoading({
 								title: '登录中...',
 								mask: true

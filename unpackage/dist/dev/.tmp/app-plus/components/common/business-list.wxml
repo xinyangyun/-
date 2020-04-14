@@ -1,0 +1,1 @@
+<view class="_div"><view data-event-opts="{{[['tap',[['openDetail',['$event']]]]]}}" style="width:372.5rpx;" bindtap="__e" class="_div"><image src="{{item.image}}" mode="widthFix" lazy-load></image><view class="p-2 pt-1 _div"><view class="font-md _div">{{item.name}}</view><text class="d-block font text-light-muted">{{item.info}}</text></view></view></view>

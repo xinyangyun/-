@@ -21,7 +21,6 @@
 		},
 		methods:{
 			event(item){
-				console.log(item.url);
 				uni.navigateTo({
 					url:item.url
 				})

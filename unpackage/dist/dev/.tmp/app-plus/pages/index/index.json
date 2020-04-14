@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "divider": "/components/common/divider",
+    "swiper-image": "/components/index/swiper-image",
+    "index-nav": "/components/index/index-nav",
+    "business-list": "/components/common/business-list"
+  }
+}

@@ -8,7 +8,7 @@
 			<indexNav :resdata="navImages"></indexNav>
 		</view>
 		<divider></divider>
-		<view class="row j-sb" @click="getShop">
+		<view class="row j-sb">
 			<block v-for="(vlist,listindex) in businessList" :key="listindex">
 				<businessList :item="vlist" :index="listindex" />
 			</block>
@@ -69,41 +69,11 @@
 						url:"/pages/fastrun/fastrun"
 					},
 				],
-				businessList: [{
-						cover: "/static/images/index/4.jpg",
-						title: "百泉文彩",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-					{
-						cover: "/static/images/index/4.jpg",
-						title: "北京饭店-谭家菜",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-					{
-						cover: "/static/images/index/4.jpg",
-						title: "阿拉木汗宫",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-					{
-						cover: "/static/images/index/4.jpg",
-						title: "新红资俱乐部餐厅",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-					{
-						cover: "/static/images/index/4.jpg",
-						title: "百泉文彩",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-					{
-						cover: "/static/images/index/4.jpg",
-						title: "北京饭店-谭家菜",
-						desc: "之江饭店矗立于杭城中轴线上",
-					},
-				],
-				businessList2:[],
+				businessList:[],
 			}
 		},
 		onLoad() {
+			this.getShop();
 		},
 		methods: {
 			getShop() {
@@ -116,7 +86,7 @@
 					success: (res) => {
 						if (res.statusCode) {
 							console.log(res.data);
-							this.businessList2 = res.data
+							this.businessList = res.data
 						}
 					}
 				});

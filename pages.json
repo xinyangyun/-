@@ -10,7 +10,13 @@
 			"path": "pages/order/order"
 		},
 		{
-			"path": "pages/my/my"
+			"path": "pages/my/my",
+			"style": {
+				"app-plus":{
+					"titleNView":false,
+					"bounce":"none"
+				}
+			}
 		},
 		{
             "path" : "pages/login/login",
@@ -24,15 +30,77 @@
         }
         ,{
             "path" : "pages/fastrun/fastrun",
-            "style" : {}
+            "style": {
+            	"app-plus":{
+            		"scrollIndicator":"none",
+            		"titleNView":{
+            			"searchInput":{
+            				"align":"left",
+            				"backgroundColor":"#F7F7F7",
+            				"borderRadius":"4px",
+            				"disabled":false,
+            				"placeholder":"输入商家的名称/商品",
+            				"placeholderColor":"#CCCCCC"
+            			},
+            			"buttons":[
+            				{
+            					"color":"#989898",
+            					"colorPressed":"#FD6801",
+            					"float":"right",
+            					"fontSize":"16px",
+            					"text":"搜索"
+            				}
+            			]
+            		}
+            	}
+            }
         }
         ,{
             "path" : "pages/book/book",
-            "style" : {}
+            "style": {
+            	"app-plus":{
+            		"scrollIndicator":"none",
+            		"titleNView":{
+            			"searchInput":{
+            				"align":"left",
+            				"backgroundColor":"#F7F7F7",
+            				"borderRadius":"4px",
+            				"disabled":false,
+            				"placeholder":"输入图书的名称",
+            				"placeholderColor":"#CCCCCC"
+            			},
+            			"buttons":[
+            				{
+            					"color":"#989898",
+            					"colorPressed":"#FD6801",
+            					"float":"right",
+            					"fontSize":"16px",
+            					"text":"搜索"
+            				}
+            			]
+            		}
+            	}
+            }
         }
         ,{
             "path" : "pages/express/express",
             "style" : {}
+        }
+        ,{
+            "path" : "pages/shop-detail/shop-detail",
+            "style" : {}
+        }
+		,{
+		    "path" : "pages/user-set/user-set",
+		    "style" : {
+				"navigationBarTitleText":"用户设置"
+			}
+		}
+        ,{
+            "path" : "pages/user-userinfo/user-userinfo",
+            "style" : {
+				"navigationBarTitleText":"修改资料"
+			}
         }
     ],
 	"globalStyle": {

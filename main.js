@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App'
+import store from './store'       
+Vue.prototype.$store = store    
 
 Vue.config.productionTip = false
 
@@ -9,6 +11,7 @@ import divider from "@/components/common/divider.vue"
 Vue.component('divider',divider)
 
 const app = new Vue({
+	store,
     ...App
 })
 app.$mount()

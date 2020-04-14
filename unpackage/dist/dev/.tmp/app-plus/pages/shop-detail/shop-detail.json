@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "price": "/components/common/price",
+    "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box"
+  }
+}
