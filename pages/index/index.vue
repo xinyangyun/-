@@ -13,6 +13,7 @@
 				<businessList :item="vlist" :index="listindex" />
 			</block>
 		</view>
+		<view style="height: 100upx;"></view>
 	</div>
 
 </template>
@@ -44,28 +45,28 @@
 					}
 				],
 				navImages: [{
-						src: "/static/images/indexnav/1.png",
-						text: "新品发布",
+						src: "/static/images/indexnav/shop.png",
+						text: "快跑超市",
 						url:"/pages/fastrun/fastrun"
 					},
 					{
-						src: "/static/images/indexnav/2.gif",
-						text: "小米众筹",
+						src: "/static/images/indexnav/shop2.png",
+						text: "快跑商城",
 						url:"/pages/book/book"
 					},
 					{
-						src: "/static/images/indexnav/3.gif",
-						text: "以旧换新",
+						src: "/static/images/indexnav/book.png",
+						text: "快跑图书",
 						url:"/pages/express/express"
 					},
 					{
-						src: "/static/images/indexnav/4.gif",
-						text: "一分换团",
+						src: "/static/images/indexnav/food.png",
+						text: "快跑饭店",
 						url:"/pages/fastrun/fastrun"
 					},
 					{
-						src: "/static/images/indexnav/5.gif",
-						text: "超值特卖",
+						src: "/static/images/indexnav/friend.png",
+						text: "快跑交友",
 						url:"/pages/fastrun/fastrun"
 					},
 				],

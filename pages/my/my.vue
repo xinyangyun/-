@@ -6,9 +6,9 @@
 			style="font-size: 50rpx;top: 75rpx;right: 20rpx;z-index: 100;"></view>
 			<image src="../../static/images/my/bg.jpg" style="height: 320rpx;width: 100%;"></image>
 			<view class="d-flex j-sb a-center position-absolute left-0 right-0" style="bottom: 50rpx;">
-				<image src="../../static/images/order/dingdan.jpg" style="height: 145rpx;width: 145rpx;border: 5rpx solid;"
+				<image :src="user.userImage" style="height: 145rpx;width: 145rpx;border: 5rpx solid;"
 				class="rounded-circle border-light ml-4"></image>
-				<view class="ml-2 text-white font-md">测试昵称</view>
+				<view class="ml-2 text-white font-md">{{user.nameZh}}</view>
 				<view class="d-flex a-center j-center a-self-end ml-auto px-2" style="height: 70rpx;background: #FFD43F;
 				color: #CC4A00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">
 					<view class="line-h iconfont icon-huangguan mr-1"></view>
@@ -19,7 +19,7 @@
 
 		<divider></divider>
 
-		<uni-list-item title="快跑会员" :showExtraIcon="true" 
+		<uni-list-item title="快跑会员" :showExtraIcon="true" @click="_initUser()"
 		leftIcon="icon-huiyuantequan" leftIconStyle="color:#FDBF2E;"></uni-list-item>
 		<uni-list-item title="会员中心" :showExtraIcon="true"
 		leftIcon="icon-huangguan" leftIconStyle="color:#FCBE2D;"></uni-list-item>
@@ -45,8 +45,14 @@
 		},
 		data() {
 			return {
-
+				user:{},
 			}
+		},
+		created() {
+			this._initUser()
+		},
+		onLoad() {
+			this._initUser()
 		},
 		methods: {
 			navigate(path){
@@ -54,6 +60,15 @@
 				uni.navigateTo({
 					url: `/pages/${path}/${path}`,
   				});
+			},
+			_initUser(){
+			    var	user = localStorage.getItem("user");
+				if(user) {
+					var u = JSON.parse(user)
+					this.user = u;
+				}
+				console.log("ddddd");
+				console.log(user);
 			}
 		}
 	}

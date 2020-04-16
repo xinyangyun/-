@@ -115,6 +115,8 @@
 								 userPhone:res.data.obj.phone,
 								 userName:res.data.obj.username,
 								 userAddress:res.data.obj.address,
+								 userImage:res.data.obj.image,
+								 nameZh:res.data.obj.nameZh,
 							}))
 							console.log(res);
 							uni.showLoading({
@@ -126,7 +128,7 @@
 								uni.navigateBack({
 									delta:1
 								})
-							},3000)
+							},1500)
 						}
 				    }
 				});

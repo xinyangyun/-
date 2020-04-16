@@ -8,7 +8,7 @@
 				<order-list :item="item" :index="listIndex"></order-list>
 			</block>
 		</view>
-		
+		<view style="height: 100upx;"></view>
 	</div>
 </template>
 

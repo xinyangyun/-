@@ -110,6 +110,7 @@
 				});
 			},
 			getShop() {
+				console.log(this.shopId);
 				uni.request({
 					url: 'http://localhost:8080/shop/findShopById/'+this.shopId, 
 					method: 'GET',
@@ -118,6 +119,7 @@
 					},
 					success: (res) => {
 						if (res.statusCode) {
+							console.log(res);
 							this.shop = res.data
 							console.log(this.shop);
 						}
@@ -166,7 +168,7 @@
 							sellerName:this.shop.name,
 							sellerPhone:this.shop.phone,
 							sid:this.shop.id,
-							uid:this.orders.uid
+							uid:this.orders.uid,
 						}
 					},
 					method:'POST',
