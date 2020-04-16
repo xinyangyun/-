@@ -1,7 +1,7 @@
 <template>
 	<card>
 		<view class="p-2 d-flex a-start border-light-secondary">
-			<image src="../../static/images/order/dingdan.jpg" mode="widthFix"
+			<image src="../../static/images/order/toux.jpg" mode="widthFix"
 			style="width: 90rpx;height: 90rpx;" class="rounded flex-shrink"></image> 
 			<view class="pl-2 flex-1">
 				<view class="d-flex a-center">

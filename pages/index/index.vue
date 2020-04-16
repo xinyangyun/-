@@ -13,7 +13,7 @@
 				<businessList :item="vlist" :index="listindex" />
 			</block>
 		</view>
-		<view style="height: 100upx;"></view>
+		<view style="height: 120upx;"></view>
 	</div>
 
 </template>
@@ -21,7 +21,8 @@
 <script>
 	import swiperImage from "@/components/index/swiper-image.vue";
 	import indexNav from "@/components/index/index-nav.vue";
-	import businessList from "@/components/common/business-list.vue";
+	// import businessList from "@/components/common/business-list.vue";
+	import businessList from "@/components/common/business-list2.vue";
 
 	export default {
 		components: {
@@ -32,41 +33,56 @@
 		data() {
 			return {
 				swiperImages: [{
-						src: "../../static/images/index/4.jpg"
+						src: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3292573559,3052664958&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/5.jpg"
+						src: "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3576385290,1014704502&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/6.jpg"
+						src: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2185264930,753939341&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/7.jpg"
+						src: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=819456544,630675573&fm=26&gp=0.jpg"
 					}
 				],
 				navImages: [{
-						src: "/static/images/indexnav/shop.png",
-						text: "快跑超市",
-						url:"/pages/fastrun/fastrun"
-					},
-					{
 						src: "/static/images/indexnav/shop2.png",
-						text: "快跑商城",
-						url:"/pages/book/book"
-					},
-					{
-						src: "/static/images/indexnav/book.png",
-						text: "快跑图书",
+						text: "快购超市",
 						url:"/pages/express/express"
 					},
 					{
+						src: "/static/images/indexnav/book.png",
+						text: "图书文化",
+						url:"/pages/book/book"
+					},
+					{
 						src: "/static/images/indexnav/food.png",
-						text: "快跑饭店",
+						text: "天天美食",
 						url:"/pages/fastrun/fastrun"
 					},
 					{
-						src: "/static/images/indexnav/friend.png",
-						text: "快跑交友",
+						src: "/static/images/indexnav/friend2.png",
+						text: "校园交友",
+						url:"/pages/fastrun/fastrun"
+					},
+					{
+						src: "/static/images/indexnav/kuaidi.png",
+						text: "快递代取",
+						url:"/pages/fastrun/fastrun"
+					},
+					{
+						src: "/static/images/indexnav/flower.png",
+						text: "浪漫鲜花",
+						url:"/pages/fastrun/fastrun"
+					},
+					{
+						src: "/static/images/indexnav/drink.png",
+						text: "甜点饮品",
+						url:"/pages/fastrun/fastrun"
+					},
+					{
+						src: "/static/images/indexnav/active.png",
+						text: "精彩活动",
 						url:"/pages/fastrun/fastrun"
 					},
 				],

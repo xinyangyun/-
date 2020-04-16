@@ -23,6 +23,7 @@
 		data() {
 			return {
 				orders:[],
+				userId:"",
 			}
 		},
 		onLoad() {
@@ -41,8 +42,13 @@
 		},
 		methods: {
 			getOrders() {
+				var user = localStorage.getItem("user")
+				if (user) {
+					var u = JSON.parse(user)
+					this.userId = u.userId
+				}
 				uni.request({
-					url: 'http://localhost:8080/orders/findOrdersByUid/1', 
+					url: 'http://localhost:8080/orders/findOrdersByUid/'+this.userId, 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

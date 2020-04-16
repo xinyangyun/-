@@ -24,16 +24,16 @@
 		data() {
 			return {
 				swiperImages: [{
-						src: "../../static/images/index/4.jpg"
+						src: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3292573559,3052664958&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/5.jpg"
+						src: "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3576385290,1014704502&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/6.jpg"
+						src: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2185264930,753939341&fm=26&gp=0.jpg"
 					},
 					{
-						src: "../../static/images/index/7.jpg"
+						src: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=819456544,630675573&fm=26&gp=0.jpg"
 					}
 				],
 				businessList: [{

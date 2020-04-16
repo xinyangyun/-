@@ -105,12 +105,13 @@
 					success: (res) => {
 						if (res.statusCode) {
 							this.goodsList = res.data
+							this._initOrderProducts()
 						}
 					}
 				});
 			},
 			getShop() {
-				console.log(this.shopId);
+				// console.log(this.shopId);
 				uni.request({
 					url: 'http://localhost:8080/shop/findShopById/'+this.shopId, 
 					method: 'GET',
@@ -119,24 +120,26 @@
 					},
 					success: (res) => {
 						if (res.statusCode) {
-							console.log(res);
+							// console.log(res);
 							this.shop = res.data
-							console.log(this.shop);
+							// console.log(this.shop);
 						}
 					}
 				});
 			},
 			changeNum(e,item,index) {
 				item.num = e;
-				if (index == this.orderProducts.length){
-					var order = {pid:0,pnum:0};
-					order.pnum = item.num
-					order.pid = item.id
-					this.orderProducts.push(order)
-				}else{
-					this.orderProducts[index].pnum = item.num;
-					this.orderProducts[index].pid = item.id;
-				}
+				// if (index == this.orderProducts.length){
+				// 	var order = {pid:0,pnum:0};
+				// 	order.pnum = item.num
+				// 	order.pid = item.id
+				// 	this.orderProducts.push(order)
+				// }else{
+				// 	this.orderProducts[index].pnum = item.num;
+				// 	this.orderProducts[index].pid = item.id;
+				// }
+				this.orderProducts[index].pnum = item.num;
+				this.orderProducts[index].pid = item.id;
 				var total = 0;
 				this.goodsList.forEach(v=>{
 					if (v.num > 0){
@@ -190,6 +193,12 @@
 				    }
 				});
 			},
+			_initOrderProducts() {
+				for(var i=0;i<this.goodsList.length;i++){
+					var order = {pid:0,pnum:0};
+					this.orderProducts.push(order)
+				}
+			}
 		}
 	}
 </script>
