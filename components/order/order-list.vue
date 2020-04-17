@@ -6,7 +6,7 @@
 			<view class="pl-2 flex-1">
 				<view class="d-flex a-center">
 					<text class="font-md text-dark" style="padding-right: 100rpx;">{{item.sellerName}}</text>
-					<text class="font-sm text-danger">共记{{item.orderAmount}}￥</text>
+					<text class="font-sm text-danger">共计{{item.orderAmount}}￥</text>
 					<view class="text-light-muted ml-auto">
 						<text class="pl-1 font">{{item.orderStatus = 1 ? '已下单' :'已送达'}}</text>
 					</view>

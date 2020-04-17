@@ -66,6 +66,7 @@
 				totalPrice:0,
 				shop:[],
 				orderProducts:[],
+				orderProducts2:[],
 				orders: {
 				    buyerAddress: "",
 				    buyerName: "",
@@ -158,10 +159,11 @@
 					this.orders.buyerName = user.userName
 					this.orders.buyerAddress = user.userAddress
 				}
+				this.orderProductsFresh()
 				uni.request({
 				    url: 'http://localhost:8080/orders/order', //仅为示例，并非真实接口地址。
 					data:{
-						orderProducts:this.orderProducts,
+						orderProducts:this.orderProducts2,
 						orders:{
 							buyerAddress:this.orders.buyerAddress,
 							buyerName:this.orders.buyerName,
@@ -197,6 +199,13 @@
 				for(var i=0;i<this.goodsList.length;i++){
 					var order = {pid:0,pnum:0};
 					this.orderProducts.push(order)
+				}
+			},
+			orderProductsFresh() {
+				for(var i=0;i<this.orderProducts.length;i++ ) {
+					if(this.orderProducts[i].pid !=0 && this.orderProducts[i].pnum!=0) {
+						this.orderProducts2.push(this.orderProducts[i])
+					}
 				}
 			}
 		}

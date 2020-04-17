@@ -34,10 +34,9 @@
 				test:state=>state.order.test,
 			}),
 			...mapGetters([
-				
 			])
 		},
-		created() {
+		onShow() {
 			this.getOrders()
 		},
 		methods: {
