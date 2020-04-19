@@ -6,7 +6,7 @@
 			 :key="listIndex" @click="navigate(list.path)"></uni-list-item>
 		</card>
 		<view class="p-3">
-			<button type="default" class="bg-white" @click="navigate('login')">退出登录</button>
+			<button type="default" class="bg-white" @click="navigateTOLogin()">退出登录</button>
 		</view>
 	</view>
 </template>
@@ -49,7 +49,15 @@
 				uni.navigateTo({
 					url: `/pages/${path}/${path}`,
 				});
-			}
+			},
+			navigateTOLogin(){
+				uni.clearStorageSync();
+				// var user = localStorage.getItem("user")
+				// console.log(JSON.parse(user));
+				uni.navigateTo({
+					url: '/pages/login/login',
+				});
+			},
 		}
 	}
 </script>

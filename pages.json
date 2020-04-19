@@ -1,9 +1,18 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/login/login",
+		    "style" : {
+				"app-plus":{
+					"bounce":"none",     
+					"scrollIndicator":"none",
+					"titleNView":false
+				}
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
-				
 			}
 		},
 		{
@@ -19,16 +28,6 @@
 			}
 		},
 		{
-            "path" : "pages/login/login",
-            "style" : {
-				"app-plus":{
-					"bounce":"none",     
-					"scrollIndicator":"none",
-					"titleNView":false
-				}
-			}
-        }
-        ,{
             "path" : "pages/fastrun/fastrun",
             "style": {
             	"app-plus":{
@@ -84,7 +83,30 @@
         }
         ,{
             "path" : "pages/express/express",
-            "style" : {}
+            "style" : {
+				"app-plus":{
+					"scrollIndicator":"none",
+					"titleNView":{
+						"searchInput":{
+							"align":"left",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"disabled":false,
+							"placeholder":"输入商家的名称/商品",
+							"placeholderColor":"#CCCCCC"
+						},
+						"buttons":[
+							{
+								"color":"#989898",
+								"colorPressed":"#FD6801",
+								"float":"right",
+								"fontSize":"16px",
+								"text":"搜索"
+							}
+						]
+					}
+				}
+			}
         }
         ,{
             "path" : "pages/shop-detail/shop-detail",
@@ -101,6 +123,10 @@
             "style" : {
 				"navigationBarTitleText":"修改资料"
 			}
+        }
+        ,{
+            "path" : "pages/flower/flower",
+            "style" : {}
         }
     ],
 	"globalStyle": {

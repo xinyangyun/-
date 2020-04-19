@@ -89,7 +89,7 @@
 		},
 		computed: {
 			...mapState({
-				test:state=>state.order.test,
+				serverUrl:state=>state.common.serverUrl,
 			}),
 			...mapGetters([
 				
@@ -98,7 +98,8 @@
 		methods: {
 			getGoods(){
 				uni.request({
-					url: 'http://localhost:8080/shop/findProductsBySid/'+this.shopId, 
+					// url: 'http://localhost:8080/shop/findProductsBySid/'+this.shopId,
+					url: this.serverUrl+'/shop/findProductsBySid/'+this.shopId, 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 
@@ -114,7 +115,8 @@
 			getShop() {
 				// console.log(this.shopId);
 				uni.request({
-					url: 'http://localhost:8080/shop/findShopById/'+this.shopId, 
+					// url: 'http://localhost:8080/shop/findShopById/'+this.shopId, 
+					url: this.serverUrl+'/shop/findShopById/'+this.shopId, 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 
@@ -151,17 +153,31 @@
 			},
 			submitPrice(){
 				console.log("结算价格");
-				var user = localStorage.getItem("user");
-				if(user) {
-					user = JSON.parse(user)
-					this.orders.uid = user.userId
-					this.orders.buyerPhone = user.userPhone
-					this.orders.buyerName = user.userName
-					this.orders.buyerAddress = user.userAddress
-				}
+				// var user = localStorage.getItem("user");
+				var test = this
+				uni.getStorage({
+					key:'user',
+					success:function(res){
+						if(res.data) {
+							var u = JSON.parse(res.data)
+							test.orders.uid = u.userId
+							test.orders.buyerPhone = u.userPhone
+							test.orders.buyerName = u.userName
+							test.orders.buyerAddress = u.userAddress
+						}
+					}
+				})
+				// if(user) {
+				// 	user = JSON.parse(user)
+				// 	this.orders.uid = user.userId
+				// 	this.orders.buyerPhone = user.userPhone
+				// 	this.orders.buyerName = user.userName
+				// 	this.orders.buyerAddress = user.userAddress
+				// }
 				this.orderProductsFresh()
 				uni.request({
-				    url: 'http://localhost:8080/orders/order', //仅为示例，并非真实接口地址。
+				    // url: 'http://localhost:8080/orders/order', 
+					url: this.serverUrl+'/orders/order', 
 					data:{
 						orderProducts:this.orderProducts2,
 						orders:{

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+	import {mapState} from "vuex"
 	import swiperImage from "@/components/index/swiper-image.vue";
 	import businessList from "@/components/common/business-list2.vue";
 	
@@ -47,6 +48,11 @@
 		onNavigationBarButtonTap(e) {
 			console.log(e);
 		},
+		computed:{
+			...mapState({
+				serverUrl:state=>state.common.serverUrl,
+			})
+		},
 		onLoad() {
 			this.getShop()
 		},
@@ -54,6 +60,7 @@
 			getShop() {
 				uni.request({
 					url: 'http://localhost:8080/shop/findShopsByType/1', 
+					url: this.serverUrl+'/shop/findShopsByType/1', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

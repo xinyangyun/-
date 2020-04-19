@@ -140,7 +140,7 @@
 				}
 			}
 		},
-		inject: ['list'],
+		// inject: ['list'], 这里打开会报错
 		data() {
 			return {
 				isFirstChild: false

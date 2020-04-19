@@ -48,10 +48,10 @@
 				user:{},
 			}
 		},
-		created() {
+		onLoad() {
 			this._initUser()
 		},
-		onLoad() {
+		onShow() {
 			this._initUser()
 		},
 		methods: {
@@ -62,13 +62,17 @@
   				});
 			},
 			_initUser(){
-			    var	user = localStorage.getItem("user");
-				if(user) {
-					var u = JSON.parse(user)
-					this.user = u;
-				}
-				console.log("ddddd");
-				console.log(user);
+			    // var	user = localStorage.getItem("user");
+				var test = this
+				uni.getStorage({
+					key:'user',
+					success:function(res){
+						if(res.data) {
+							var u = JSON.parse(res.data)
+							test.user = u
+						}
+					}
+				})
 			}
 		}
 	}

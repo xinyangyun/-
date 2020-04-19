@@ -19,6 +19,7 @@
 </template>
 
 <script>
+	import {mapState} from "vuex"
 	import swiperImage from "@/components/index/swiper-image.vue";
 	import indexNav from "@/components/index/index-nav.vue";
 	// import businessList from "@/components/common/business-list.vue";
@@ -73,7 +74,7 @@
 					{
 						src: "/static/images/indexnav/flower.png",
 						text: "浪漫鲜花",
-						url:"/pages/fastrun/fastrun"
+						url:"/pages/flower/flower"
 					},
 					{
 						src: "/static/images/indexnav/drink.png",
@@ -89,13 +90,19 @@
 				businessList:[],
 			}
 		},
+		computed:{
+			...mapState({
+				serverUrl:state=>state.common.serverUrl,
+			})
+		},
 		onLoad() {
 			this.getShop();
 		},
 		methods: {
 			getShop() {
 				uni.request({
-					url: 'http://localhost:8080/shop/findAll', 
+					// url: 'http://localhost:8080/shop/findAll', 
+					url: this.serverUrl+'/shop/findAll', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

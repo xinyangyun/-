@@ -26,13 +26,14 @@
 			</view>
 			<label class="checkbox d-flex a-center" @click="check = !check">
 				<checkbox :checked="check" />
-				<text class="text-light-muted font">已阅读并同意xxxx协议</text>
+				<text class="text-light-muted font">已阅读并同意校园快购协议</text>
 			</label>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {mapState} from "vuex"
 	import uniStatusBar from "@/components/uni-ui/uni-status-bar/uni-status-bar.vue"
 	
 	export default {
@@ -60,12 +61,16 @@
 						}
 					]
 				},
-				
 				focusClass:{
 					username:false,
 					password:false
-				}
+				},
 			}
+		},  
+		computed:{
+			...mapState({
+				serverUrl:state=>state.common.serverUrl,
+			})
 		},
 		methods: {
 			goBack(){
@@ -90,7 +95,7 @@
 			submit(){
 				if (!this.check) {
 					return uni.showToast({
-						title:'请先同意xxx协议'
+						title:'请先同意校园快购协议'
 					})
 				}
 				//验证用户名
@@ -99,7 +104,8 @@
 				// if (!this.validate('password')) return;
 				console.log('提交成功');
 				uni.request({
-				    url: 'http://localhost:8080/login', //仅为示例，并非真实接口地址。
+				    // url: 'http://localhost:8080/login', 
+					url: this.serverUrl+'/login', 
 					data:{
 						username:this.username,
 						password:this.password
@@ -110,14 +116,28 @@
 				    },
 				    success: (res) => {
 						if (res.data.status == 200) {
-							localStorage.setItem("user",JSON.stringify({
-								 userId:res.data.obj.id,
-								 userPhone:res.data.obj.phone,
-								 userName:res.data.obj.username,
-								 userAddress:res.data.obj.address,
-								 userImage:res.data.obj.image,
-								 nameZh:res.data.obj.nameZh,
-							}))
+							// localStorage.setItem("user",JSON.stringify({
+							// 	 userId:res.data.obj.id,
+							// 	 userPhone:res.data.obj.phone,
+							// 	 userName:res.data.obj.username,
+							// 	 userAddress:res.data.obj.address,
+							// 	 userImage:res.data.obj.image,
+							// 	 nameZh:res.data.obj.nameZh,
+							// }))
+							uni.setStorage({
+								key:'user',
+								data: JSON.stringify({
+									 userId:res.data.obj.id,
+									 userPhone:res.data.obj.phone,
+									 userName:res.data.obj.username,
+									 userAddress:res.data.obj.address,
+									 userImage:res.data.obj.image,
+									 nameZh:res.data.obj.nameZh,
+								}),
+								success:function(){
+									console.log("存储成功");
+								}
+							})
 							console.log(res);
 							uni.showLoading({
 								title: '登录中...',
@@ -125,9 +145,12 @@
 							});
 							setTimeout(()=>{
 								uni.hideLoading()
-								uni.navigateBack({
-									delta:1
-								})
+								// uni.navigateBack({
+								// 	delta:1
+								// })
+								uni.switchTab({
+									url: '/pages/index/index',
+								});
 							},1500)
 						}
 				    }

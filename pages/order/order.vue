@@ -31,7 +31,7 @@
 		},
 		computed: {
 			...mapState({
-				test:state=>state.order.test,
+				serverUrl:state=>state.common.serverUrl,
 			}),
 			...mapGetters([
 			])
@@ -41,13 +41,24 @@
 		},
 		methods: {
 			getOrders() {
-				var user = localStorage.getItem("user")
-				if (user) {
-					var u = JSON.parse(user)
-					this.userId = u.userId
-				}
+				// var user = localStorage.getItem("user")
+				var test = this
+				uni.getStorage({
+					key:'user',
+					success:function(res){
+						if(res.data) {
+							var u = JSON.parse(res.data)
+							test.userId= u.userId;
+						}
+					}
+				})
+				// if (user) {
+				// 	var u = JSON.parse(user)
+				// 	this.userId = u.userId
+				// }
 				uni.request({
-					url: 'http://localhost:8080/orders/findOrdersByUid/'+this.userId, 
+					// url: 'http://localhost:8080/orders/findOrdersByUid/'+this.userId, 
+					url: this.serverUrl+'/orders/findOrdersByUid/'+this.userId, 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

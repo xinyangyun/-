@@ -90,8 +90,8 @@
 		methods: {
 			getShop() {
 				uni.request({
-					// url: 'http://localhost:8080/shop/findShopsByType/2', 
-					url: this.serverUrl+'/shop/findShopsByType/2', 
+					// url: 'http://localhost:8080/shop/findShopsByType/4', 
+					url: this.serverUrl+'/shop/findShopsByType/4', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

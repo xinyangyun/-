@@ -22,6 +22,7 @@
 		},
 		methods: {
 			openDetail() {
+				console.log(this.item);
 				var shopId = this.item.id
 				uni.navigateTo({
 					url:'/pages/shop-detail/shop-detail?id='+shopId
