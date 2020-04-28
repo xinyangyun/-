@@ -1,7 +1,9 @@
 <template>
 	<div>
-		<view class="pb-1">
+		<view class="d-flex pb-1 a-center">
 			<text class="font-lg pl-2" @click="getOrders">我的订单</text>
+			<text class="font-md ml-auto pr-4 text-light-muted"
+			@click="goRun">我是跑手</text>
 		</view>
 		<view>
 			<block v-for="(item,listIndex) in orders" :key="listIndex">
@@ -59,6 +61,7 @@
 				uni.request({
 					// url: 'http://localhost:8080/orders/findOrdersByUid/'+this.userId, 
 					url: this.serverUrl+'/orders/findOrdersByUid/'+this.userId, 
+					// url: this.serverUrl+'/orders/findOrdersByStatus/1', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 
@@ -70,6 +73,11 @@
 						}
 					}
 				});
+			},
+			goRun() {
+				uni.navigateTo({
+					url:"/pages/orderun/orderun"
+				})
 			}
 		}
 	}

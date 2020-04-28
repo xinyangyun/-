@@ -128,6 +128,14 @@
             "path" : "pages/flower/flower",
             "style" : {}
         }
+        ,{
+            "path" : "pages/orderun/orderun",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/drinks/drinks",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

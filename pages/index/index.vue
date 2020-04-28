@@ -79,7 +79,7 @@
 					{
 						src: "/static/images/indexnav/drink.png",
 						text: "甜点饮品",
-						url:"/pages/fastrun/fastrun"
+						url:"/pages/drinks/drinks"
 					},
 					{
 						src: "/static/images/indexnav/active.png",
