@@ -15,7 +15,7 @@
 					<text class="text-light-muted font-sm">{{item.createTime}}</text>
 				</view>
 				<view class="d-flex a-center" style="height: 70upx;font-size: 25rpx;">
-					<text class="text-dark">联系电话：{{item.sellerPhone}}</text>
+					<text class="text-dark">{{item.orderProducts[0].product.name}}&nbsp等{{item.orderProducts[0].pnum}}件商品</text>
 					<el-button class="text-danger ml-auto" @click="delOrder">取消订单</el-button>
 				</view>
 			</view>

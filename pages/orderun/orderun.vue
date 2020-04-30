@@ -97,7 +97,7 @@
 			//可接单列表
 			getOrdersOne() {
 				uni.request({
-					url: this.serverUrl+'/orders/findOrdersByStatus/1', 
+					url: this.serverUrl+'/orders/findAllOrdersWithCan', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 
@@ -114,7 +114,7 @@
 			//已接单列表
 			getOrdersGetList() {
 				uni.request({
-					url: this.serverUrl+'/orders/findOrdersByStatus/2', 
+					url: this.serverUrl+'/orders/findRunnerOrdersByStatus/2', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 
@@ -131,7 +131,7 @@
 			//已送达
 			getOrdersSongList() {
 				uni.request({
-					url: this.serverUrl+'/orders/findOrdersByStatus/3', 
+					url: this.serverUrl+'/orders/findRunnerOrdersByStatus/3', 
 					method: 'GET',
 					header: {
 						'custom-header': 'hello' 

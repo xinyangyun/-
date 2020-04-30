@@ -5,8 +5,9 @@
 			style="width: 90rpx;height: 90rpx;" class="rounded flex-shrink"></image> 
 			<view class="pl-2 flex-1">
 				<view class="d-flex a-center">
-					<text class="font-md text-dark" style="padding-right: 100rpx;">{{item.sellerName}}</text>
-					<text class="font-sm text-dark">共计{{item.orderAmount}}￥</text>
+					<text class="font-md text-dark pr-2">{{item.sellerName}}</text>
+					<text class="font-sm text-dark pr-2">已挣{{item.rprice}}￥</text>
+					<text class="font-sm text-dark">送单地址{{item.buyerAddress}}</text>
 					<view class="text-light-muted ml-auto">
 						<text class="pl-1 font">{{item.orderStatus = true ? '已送达' :'未送达'}}</text>
 					</view>
@@ -15,7 +16,7 @@
 					<text class="text-light-muted font-sm">{{item.createTime}}</text>
 				</view>
 				<view class="d-flex a-center" style="height: 70upx;font-size: 25rpx;">
-					<text class="text-dark">送单地址：{{item.buyerAddress}}</text>
+					<text class="text-dark">{{item.orderProducts[0].product.name}}&nbsp等{{item.orderProducts[0].pnum}}件商品</text>
 					<el-button class="text-danger ml-auto" @click="delOrder(item)">删除订单</el-button>
 				</view>
 			</view>
