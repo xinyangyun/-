@@ -147,6 +147,7 @@
 			},
 			//抢单
 			getOrder(data) {
+				console.log("dddd");
 				var orderId = data.id
 				uni.request({
 					url: this.serverUrl+'/orders/updateOrdersStatus/'+orderId+'/2', 

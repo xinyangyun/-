@@ -59,12 +59,12 @@
 					{
 						src: "/static/images/indexnav/food.png",
 						text: "天天美食",
-						url:"/pages/fastrun/fastrun"
+						url:"/pages/finefood/finefood"
 					},
 					{
 						src: "/static/images/indexnav/friend2.png",
 						text: "校园交友",
-						url:"/pages/fastrun/fastrun"
+						url:"/pages/drinks/drinks"
 					},
 					{
 						src: "/static/images/indexnav/kuaidi.png",
@@ -84,7 +84,7 @@
 					{
 						src: "/static/images/indexnav/active.png",
 						text: "精彩活动",
-						url:"/pages/fastrun/fastrun"
+						url:"/pages/drinks/drinks"
 					},
 				],
 				businessList:[],

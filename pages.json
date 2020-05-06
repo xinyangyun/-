@@ -136,6 +136,33 @@
             "path" : "pages/drinks/drinks",
             "style" : {}
         }
+        ,{
+            "path" : "pages/finefood/finefood",
+            "style" : {
+				"app-plus":{
+					"scrollIndicator":"none",
+					"titleNView":{
+						"searchInput":{
+							"align":"left",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"disabled":false,
+							"placeholder":"输入商家的名称/商品",
+							"placeholderColor":"#CCCCCC"
+						},
+						"buttons":[
+							{
+								"color":"#989898",
+								"colorPressed":"#FD6801",
+								"float":"right",
+								"fontSize":"16px",
+								"text":"搜索"
+							}
+						]
+					}
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

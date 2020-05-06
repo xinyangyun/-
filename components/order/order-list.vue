@@ -16,7 +16,7 @@
 				</view>
 				<view class="d-flex a-center" style="height: 70upx;font-size: 25rpx;">
 					<text class="text-dark">{{item.orderProducts[0].product.name}}&nbsp等{{item.orderProducts[0].pnum}}件商品</text>
-					<el-button class="text-danger ml-auto" @click="delOrder">取消订单</el-button>
+					<el-button class="text-danger ml-auto" @click="delOrder">删除订单</el-button>
 				</view>
 			</view>
 		</view>
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+	import {mapState,mapGetters,mapMutations,mapActions} from "vuex"
 	import card from "../uni-ui/uni-card/uni-card.vue"
 	
 	export default {
@@ -34,9 +35,14 @@
 			item:Object,
 			index:Number
 		},
+		computed: {
+			...mapState({
+				serverUrl:state=>state.common.serverUrl,
+			}),
+		},
 		methods:{
 			delOrder() {
-				console.log("删除订单");
+				this.$emit("test",this.item.id);
 			}
 		}
 	}

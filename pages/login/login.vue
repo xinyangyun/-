@@ -7,7 +7,7 @@
 		</view>
 		
 		<view class="p-5">
-			<view class="font-big mb-5">欢迎登陆快跑</view>
+			<view class="font-big mb-5">欢迎登陆For School</view>
 			<input type="text" class="border-bottom mb-4 uni-input px-0"
 			placeholder="请输入手机号/邮箱/账号" v-model="username"
 			placeholder-class="text-light-muted"
@@ -26,7 +26,7 @@
 			</view>
 			<label class="checkbox d-flex a-center" @click="check = !check">
 				<checkbox :checked="check" />
-				<text class="text-light-muted font">已阅读并同意校园快购协议</text>
+				<text class="text-light-muted font">已阅读并同意For School协议</text>
 			</label>
 		</view>
 	</view>

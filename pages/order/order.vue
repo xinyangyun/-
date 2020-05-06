@@ -7,7 +7,8 @@
 		</view>
 		<view>
 			<block v-for="(item,listIndex) in orders" :key="listIndex">
-				<order-list :item="item" :index="listIndex"></order-list>
+				<order-list :item="item" :index="listIndex" v-on:ToChange="getOrders"
+				v-on:test="deleteOrder"></order-list>
 			</block>
 		</view>
 		<view style="height: 100upx;"></view>
@@ -43,6 +44,7 @@
 		},
 		methods: {
 			getOrders() {
+				console.log("的点点滴滴");
 				// var user = localStorage.getItem("user")
 				var test = this
 				uni.getStorage({
@@ -78,7 +80,29 @@
 				uni.navigateTo({
 					url:"/pages/orderun/orderun"
 				})
+			},
+			deleteOrder(oId) {
+				uni.request({
+					url: this.serverUrl+'/orders/deleteOrdersByOid/'+oId, 
+					method: 'DELETE',
+					header: {
+						'custom-header': 'hello'
+					},
+					success: (res) => {
+						if (res.statusCode) {
+							console.log(res.data); 
+							if (res.data.msg == "删除成功！") {
+								uni.showToast({
+								    title: '删除订单成功！',
+								    duration: 1000
+								});
+								this.getOrders()
+							}
+						}
+					},
+				});
 			}
+			
 		}
 	}
 </script>
